@@ -68,14 +68,14 @@ public class LoginController {
     @ApiOperation("登录接口")
     @ResponseBody
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ResultVO login(HttpServletRequest request, String userName, String password) {
+    public ResultVO login(HttpServletRequest request, String phone, String password) {
         ResultVO resultVO = new ResultVO();
         resultVO.setCode(400);
         resultVO.setMsg("登录失败");
         try {
-            if (CheckParamUtils.check(userName) && CheckParamUtils.check(password)) {
+            if (CheckParamUtils.check(phone) && CheckParamUtils.check(password)) {
                 Map<String, Object> map = new HashMap<>();
-                map.put("user_name", userName);
+                map.put("phone", phone);
                 map.put("password", password);
                 List<Users> users = usersService.listByMap(map);
                 if (users.size() > 0) {
@@ -85,7 +85,7 @@ public class LoginController {
                     users1.setId(users.get(0).getId());
                     users1.setLoginTime(String.valueOf(System.currentTimeMillis()));
                     usersService.updateById(users1);
-                    logger.info(userName + "登录成功，登陆时间：" + TimeUtil.stampToDate(users1.getLoginTime()));
+                    logger.info(users.get(0).getUserName() + "登录成功，登陆时间：" + TimeUtil.stampToDate(users1.getLoginTime()));
                     CurrentUserUtil.setUserName(users.get(0).getUserName());
                     CurrentUserUtil.setOrgName(users.get(0).getOrgName());
                 }

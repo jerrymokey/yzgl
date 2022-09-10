@@ -4,14 +4,16 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.Version;
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.time.LocalTime;
 import java.io.Serializable;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author jerry
@@ -27,7 +29,7 @@ public class Users implements Serializable {
     /**
      * 主键
      */
-      @TableId(value = "id")
+    @TableId(value = "id")
     private String id;
 
     /**

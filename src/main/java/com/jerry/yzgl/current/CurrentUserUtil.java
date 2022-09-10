@@ -1,4 +1,8 @@
 package com.jerry.yzgl.current;
+
+import com.alibaba.fastjson.JSONObject;
+import com.jerry.yzgl.util.CheckParamUtils;
+
 /**
  * @author： jerry
  * @version： 2022/9/10 15:05
@@ -27,10 +31,12 @@ public class CurrentUserUtil {
         CurrentUserUtil.orgName = orgName;
     }
 
-    public static String getCurrentUserInfo() {
-        return "当前登录人信息：{" +
-                "用户名称='" + userName + '\'' +
-                ", 公司名称='" + orgName + '\'' +
-                '}';
+    public static JSONObject getCurrentUserInfo() {
+      JSONObject jsonObject = new JSONObject();
+      if (CheckParamUtils.check(getUserName()) && CheckParamUtils.check(getOrgName())){
+          jsonObject.put("userName",getUserName());
+          jsonObject.put("orgName",getOrgName());
+      }
+      return jsonObject;
     }
 }
