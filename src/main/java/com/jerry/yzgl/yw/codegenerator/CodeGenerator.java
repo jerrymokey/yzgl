@@ -43,7 +43,7 @@ public class CodeGenerator {
         //设置数据层接口名，%s为占位符  代表数据库中的表名或模块名
         globalConfig.setMapperName("%sDao");
         //设置id生成策略
-        globalConfig.setIdType(IdType.ASSIGN_ID);
+        /*globalConfig.setIdType(IdType.ASSIGN_ID);*/
         autoGenerator.setGlobalConfig(globalConfig);
 
         /**

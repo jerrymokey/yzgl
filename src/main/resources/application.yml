@@ -4,12 +4,12 @@ server:
 ########### 数据库
 spring:
   datasource:
-       name: "yzgl"
-       type: com.mysql.cj.jdbc.MysqlDataSource
-       driver-class-name: com.mysql.jdbc.Driver
-       url: jdbc:mysql://localhost:3306/yzgl?useSSL=false&serverTimezone=UTC
-       username: root
-       password: 123456
+    name: "yzgl"
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yzgl?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
@@ -20,6 +20,14 @@ mybatis-plus:
   configuration:
     #驼峰命名规则
     map-underscore-to-camel-case: true
-
+####### File
+file:
+  uploadAddr: D:\opt\yzgl\animalImage
+  downloadAddr: http://localhost:8080/file/download?fileName=
+#更改上传文件的大小上限
+http:
+  multipart:
+    max-file-size: 100MB
+    max-request-size: 100MB
 
 

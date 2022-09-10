@@ -7,6 +7,7 @@ import com.jerry.yzgl.util.TimeUtil;
 import com.jerry.yzgl.util.UUIDUtils;
 import com.jerry.yzgl.yw.domain.Users;
 import com.jerry.yzgl.yw.service.IUsersService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +28,7 @@ import java.util.Map;
  * @version： 2022/9/10 12:40
  * 登录控制器
  */
+@ApiOperation("登录相关接口")
 @RestController
 @RequestMapping("login")
 public class LoginController {

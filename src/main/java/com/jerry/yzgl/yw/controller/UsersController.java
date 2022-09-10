@@ -3,6 +3,7 @@ package com.jerry.yzgl.yw.controller;
 
 import com.jerry.yzgl.current.CurrentUserUtil;
 import com.jerry.yzgl.util.ResultVO;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author jerry
  * @since 2022-09-10
  */
+@ApiOperation("用户相关接口")
 @RestController
 @RequestMapping("/users")
 public class UsersController {
