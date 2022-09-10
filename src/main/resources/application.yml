@@ -14,8 +14,12 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 ########### Mybatis
-mybatis:
-   mapper-locations: classpath:mapper/*Mapper.xml
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/xml/*Mapper.xml
+  type-aliases-package: com.jerry.yzgl.yw.domain
+  configuration:
+    #驼峰命名规则
+    map-underscore-to-camel-case: true
 
 
 
