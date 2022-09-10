@@ -1,7 +1,7 @@
 package com.jerry.yzgl.yw.dao;
 
-import com.jerry.yzgl.yw.domain.Users;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.jerry.yzgl.yw.domain.Users;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

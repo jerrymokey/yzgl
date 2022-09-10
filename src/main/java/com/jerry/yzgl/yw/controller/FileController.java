@@ -36,7 +36,7 @@ public class FileController {
     @Value("${file.uploadAddr}")
     private String fileUploadAddr;
 
-
+    @ApiOperation("文件上传接口")
     @ResponseBody
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public ResultVO upload(MultipartFile file, HttpServletRequest request) throws IOException {
@@ -60,7 +60,7 @@ public class FileController {
         }
         return resultVO;
     }
-
+    @ApiOperation("文件下载接口")
     @RequestMapping(value = "/download", method = RequestMethod.GET)
     public void download(String fileName, HttpServletRequest request, HttpServletResponse response) throws Exception {
         //获取文件的绝对路径
