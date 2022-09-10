@@ -1,5 +1,6 @@
 package com.jerry.yzgl.yw.controller;
 
+import com.jerry.yzgl.current.CurrentUserUtil;
 import com.jerry.yzgl.util.CheckParamUtils;
 import com.jerry.yzgl.util.ResultVO;
 import com.jerry.yzgl.util.TimeUtil;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import sun.plugin2.util.SystemUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -33,6 +33,7 @@ public class LoginController {
     private Logger logger = LoggerFactory.getLogger(LoginController.class);
     @Autowired
     private IUsersService usersService;
+
     @ApiOperation("注册接口")
     @ResponseBody
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -73,11 +74,11 @@ public class LoginController {
         resultVO.setMsg("登录失败");
         try {
             if (CheckParamUtils.check(userName) && CheckParamUtils.check(password)) {
-                Map<String,Object> map = new HashMap<>();
-                map.put("user_name",userName);
-                map.put("password",password);
+                Map<String, Object> map = new HashMap<>();
+                map.put("user_name", userName);
+                map.put("password", password);
                 List<Users> users = usersService.listByMap(map);
-                if (users.size()>0){
+                if (users.size() > 0) {
                     resultVO.setMsg("登录成功");
                     resultVO.setCode(200);
                     Users users1 = new Users();
@@ -85,6 +86,8 @@ public class LoginController {
                     users1.setLoginTime(String.valueOf(System.currentTimeMillis()));
                     usersService.updateById(users1);
                     logger.info(userName + "登录成功，登陆时间：" + TimeUtil.stampToDate(users1.getLoginTime()));
+                    CurrentUserUtil.setUserName(users.get(0).getUserName());
+                    CurrentUserUtil.setOrgName(users.get(0).getOrgName());
                 }
             } else {
                 resultVO.setMsg("登录失败");
