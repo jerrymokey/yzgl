@@ -86,6 +86,18 @@ public class InitDicData implements InitializingBean {
         dic3.setDicCode("health");
         dicList.add(dic3);
 
+        Dic dic4 = new Dic();
+        dic4.setId(UUIDUtils.getUUID());
+        dic4.setDicName("车辆类型");
+        dic4.setDicCode("carType");
+        dicList.add(dic4);
+
+        Dic dic5 = new Dic();
+        dic5.setId(UUIDUtils.getUUID());
+        dic5.setDicName("车辆油料型号");
+        dic5.setDicCode("carOil");
+        dicList.add(dic5);
+
         dicService.saveBatch(dicList);
     }
 
@@ -176,6 +188,84 @@ public class InitDicData implements InitializingBean {
         dicitem13.setDicitemCode("health");
         dicitem13.setDicitemName("生病");
         dicitemList.add(dicitem13);
+
+        Dicitem dicitem14 = new Dicitem();
+        dicitem14.setId(UUIDUtils.getUUID());
+        dicitem14.setDicitemCode("carType");
+        dicitem14.setDicitemName("小型车");
+        dicitemList.add(dicitem14);
+
+        Dicitem dicitem15 = new Dicitem();
+        dicitem15.setId(UUIDUtils.getUUID());
+        dicitem15.setDicitemCode("carType");
+        dicitem15.setDicitemName("中型车");
+        dicitemList.add(dicitem15);
+
+        Dicitem dicitem16 = new Dicitem();
+        dicitem16.setId(UUIDUtils.getUUID());
+        dicitem16.setDicitemCode("carType");
+        dicitem16.setDicitemName("大型车");
+        dicitemList.add(dicitem16);
+
+        Dicitem dicitem17 = new Dicitem();
+        dicitem17.setId(UUIDUtils.getUUID());
+        dicitem17.setDicitemCode("carOil");
+        dicitem17.setDicitemName("92号汽油");
+        dicitemList.add(dicitem17);
+
+        Dicitem dicitem18 = new Dicitem();
+        dicitem18.setId(UUIDUtils.getUUID());
+        dicitem18.setDicitemCode("carOil");
+        dicitem18.setDicitemName("95号汽油");
+        dicitemList.add(dicitem18);
+
+        Dicitem dicitem19 = new Dicitem();
+        dicitem19.setId(UUIDUtils.getUUID());
+        dicitem19.setDicitemCode("carOil");
+        dicitem19.setDicitemName("98号汽油");
+        dicitemList.add(dicitem19);
+
+        Dicitem dicitem20 = new Dicitem();
+        dicitem20.setId(UUIDUtils.getUUID());
+        dicitem20.setDicitemCode("carOil");
+        dicitem20.setDicitemName("10#柴油");
+        dicitemList.add(dicitem20);
+
+        Dicitem dicitem21 = new Dicitem();
+        dicitem21.setId(UUIDUtils.getUUID());
+        dicitem21.setDicitemCode("carOil");
+        dicitem21.setDicitemName("5＃柴油");
+        dicitemList.add(dicitem21);
+
+        Dicitem dicitem22 = new Dicitem();
+        dicitem22.setId(UUIDUtils.getUUID());
+        dicitem22.setDicitemCode("carOil");
+        dicitem22.setDicitemName("0＃柴油");
+        dicitemList.add(dicitem22);
+
+        Dicitem dicitem23 = new Dicitem();
+        dicitem23.setId(UUIDUtils.getUUID());
+        dicitem23.setDicitemCode("carOil");
+        dicitem23.setDicitemName("-10＃柴油");
+        dicitemList.add(dicitem23);
+
+        Dicitem dicitem24 = new Dicitem();
+        dicitem24.setId(UUIDUtils.getUUID());
+        dicitem24.setDicitemCode("carOil");
+        dicitem24.setDicitemName("-20＃柴油");
+        dicitemList.add(dicitem24);
+
+        Dicitem dicitem25 = new Dicitem();
+        dicitem25.setId(UUIDUtils.getUUID());
+        dicitem25.setDicitemCode("carOil");
+        dicitem25.setDicitemName("-35＃柴油");
+        dicitemList.add(dicitem25);
+
+        Dicitem dicitem26 = new Dicitem();
+        dicitem26.setId(UUIDUtils.getUUID());
+        dicitem26.setDicitemCode("carOil");
+        dicitem26.setDicitemName("-50＃柴油");
+        dicitemList.add(dicitem26);
 
         dicitemService.saveBatch(dicitemList);
     }
