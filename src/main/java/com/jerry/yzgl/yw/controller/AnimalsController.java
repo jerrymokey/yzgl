@@ -69,7 +69,7 @@ public class AnimalsController {
         return resultVO;
     }
 
-    @ApiOperation("删除牲畜信息接口（支持单条和批量）")
+    @ApiOperation("删除牲畜信息接口（支持单条和批量，假删）")
     @ResponseBody
     @RequestMapping(value = "/delAnimal", method = RequestMethod.POST)
     public ResultVO delAnimal(String animalIds) {
@@ -79,11 +79,14 @@ public class AnimalsController {
         try {
             if (CheckParamUtils.check(animalIds)) {
                 String[] id = animalIds.split(",");
-                List<String> list = new ArrayList<>();
+                List<Animals> list = new ArrayList<>();
                 for (int i = 0; i < id.length; i++) {
-                    list.add(id[i]);
+                    Animals animals = new Animals();
+                    animals.setIsDelete(1);
+                    animals.setId(id[i]);
+                    list.add(animals);
                 }
-                animalsService.removeByIds(list);
+                animalsService.updateBatchById(list);
                 resultVO.setCode(200);
                 resultVO.setMsg("删除成功");
             }
@@ -94,7 +97,7 @@ public class AnimalsController {
         return resultVO;
     }
 
-    @ApiOperation("查询牲畜信息接口")
+    @ApiOperation("查询牲畜信息接口（分页查询 pageSize每页数据  pageNo第几页）")
     @ResponseBody
     @RequestMapping(value = "/animalList", method = RequestMethod.GET)
     public ResultVO animalList(HttpServletRequest request, String animalType, String animalHealth,
@@ -112,6 +115,8 @@ public class AnimalsController {
                 map.put("animal_sex", animalSex);
             if (CheckParamUtils.check(animalLocation))
                 map.put("animal_location", animalLocation);
+            //查询未删除的牲畜
+            map.put("is_delete",0);
             List<Animals> animalsList = animalsService.listByMap(map);
             if (animalsList != null && animalsList.size() > 0) {
                 //lambda表达式实现物理分页

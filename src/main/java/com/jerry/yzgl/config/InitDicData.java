@@ -27,6 +27,7 @@ public class InitDicData implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         logger.info("项目初始化完毕");
+
         if (!checkDic()) {
             initDic();
             logger.info("初始化字典项");
@@ -98,6 +99,18 @@ public class InitDicData implements InitializingBean {
         dic5.setDicCode("carOil");
         dicList.add(dic5);
 
+        Dic dic6 = new Dic();
+        dic6.setId(UUIDUtils.getUUID());
+        dic6.setDicName("车辆派遣类型");
+        dic6.setDicCode("carUseType");
+        dicList.add(dic6);
+
+        Dic dic7 = new Dic();
+        dic7.setId(UUIDUtils.getUUID());
+        dic7.setDicName("拉回车辆运载情况");
+        dic7.setDicCode("carStatus");
+        dicList.add(dic7);
+
         dicService.saveBatch(dicList);
     }
 
@@ -164,6 +177,13 @@ public class InitDicData implements InitializingBean {
         dicitem9.setDicitemCode("sex");
         dicitem9.setDicitemName("母");
         dicitemList.add(dicitem9);
+
+        Dicitem dicitem34 = new Dicitem();
+        dicitem34.setId(UUIDUtils.getUUID());
+        dicitem34.setDicitemCode("sex");
+        dicitem34.setDicitemName("无");
+        dicitemList.add(dicitem34);
+
 
         Dicitem dicitem10 = new Dicitem();
         dicitem10.setId(UUIDUtils.getUUID());
@@ -266,6 +286,54 @@ public class InitDicData implements InitializingBean {
         dicitem26.setDicitemCode("carOil");
         dicitem26.setDicitemName("-50＃柴油");
         dicitemList.add(dicitem26);
+
+        Dicitem dicitem27 = new Dicitem();
+        dicitem27.setId(UUIDUtils.getUUID());
+        dicitem27.setDicitemCode("carUseType");
+        dicitem27.setDicitemName("购买牲畜");
+        dicitemList.add(dicitem27);
+
+        Dicitem dicitem28 = new Dicitem();
+        dicitem28.setId(UUIDUtils.getUUID());
+        dicitem28.setDicitemCode("carUseType");
+        dicitem28.setDicitemName("运送牲畜");
+        dicitemList.add(dicitem28);
+
+        Dicitem dicitem29 = new Dicitem();
+        dicitem29.setId(UUIDUtils.getUUID());
+        dicitem29.setDicitemCode("carUseType");
+        dicitem29.setDicitemName("家用");
+        dicitemList.add(dicitem29);
+
+        Dicitem dicitem30 = new Dicitem();
+        dicitem30.setId(UUIDUtils.getUUID());
+        dicitem30.setDicitemCode("carUseType");
+        dicitem30.setDicitemName("清理粪便");
+        dicitemList.add(dicitem30);
+
+        Dicitem dicitem31 = new Dicitem();
+        dicitem31.setId(UUIDUtils.getUUID());
+        dicitem31.setDicitemCode("carUseType");
+        dicitem31.setDicitemName("重大农活");
+        dicitemList.add(dicitem31);
+
+        Dicitem dicitem32 = new Dicitem();
+        dicitem32.setId(UUIDUtils.getUUID());
+        dicitem32.setDicitemCode("carStatus");
+        dicitem32.setDicitemName("空载");
+        dicitemList.add(dicitem32);
+
+        Dicitem dicitem33 = new Dicitem();
+        dicitem33.setId(UUIDUtils.getUUID());
+        dicitem33.setDicitemCode("carStatus");
+        dicitem33.setDicitemName("小有收获");
+        dicitemList.add(dicitem33);
+
+        Dicitem dicitem35 = new Dicitem();
+        dicitem35.setId(UUIDUtils.getUUID());
+        dicitem35.setDicitemCode("carStatus");
+        dicitem35.setDicitemName("满载而归");
+        dicitemList.add(dicitem35);
 
         dicitemService.saveBatch(dicitemList);
     }

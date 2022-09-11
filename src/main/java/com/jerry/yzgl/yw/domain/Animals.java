@@ -73,6 +73,9 @@ public class Animals implements Serializable {
      * 动物健康状况（健康，生病，残疾，死亡）
      */
     private String animalHealth;
-
+    /**
+     * 动物删除状态
+     */
+    private Integer isDelete;
 
 }

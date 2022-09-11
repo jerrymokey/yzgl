@@ -70,6 +70,10 @@ public class Cars implements Serializable {
      * 备注
      */
     private String remark;
+    /**
+     * 在用情况（0，闲置；1，在用）
+     */
+    private Integer isUse;
 
 
 }

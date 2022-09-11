@@ -63,7 +63,7 @@ public class CodeGenerator {
          */
         StrategyConfig strategyConfig = new StrategyConfig();
         //设置当前参与生成的表名，参数为可变参数   生成指定表
-        strategyConfig.setInclude("cars");
+        strategyConfig.setInclude("animalBuyfromRecord");
         //设置数据库表的前缀名称，模块名=数据库表名-前缀名   User=tbl_user - tbl_
         strategyConfig.setTablePrefix("");
         //是否启用Rest风格
