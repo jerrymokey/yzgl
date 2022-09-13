@@ -1,7 +1,7 @@
 package com.jerry.yzgl.yw.service;
 
-import com.jerry.yzgl.yw.domain.Animals;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.jerry.yzgl.yw.domain.Animals;
 
 /**
  * <p>
@@ -9,8 +9,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author jerry
- * @since 2022-09-10
- */
+ * @since 2022-09-10*/
+
+
 public interface IAnimalsService extends IService<Animals> {
 
 }

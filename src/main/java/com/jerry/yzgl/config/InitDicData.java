@@ -1,3 +1,4 @@
+/*
 package com.jerry.yzgl.config;
 
 import com.jerry.yzgl.util.UUIDUtils;
@@ -338,3 +339,4 @@ public class InitDicData implements InitializingBean {
         dicitemService.saveBatch(dicitemList);
     }
 }
+*/

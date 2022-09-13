@@ -10,8 +10,9 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author jerry
- * @since 2022-09-10
- */
+ * @since 2022-09-10*/
+
+
 @Mapper
 public interface AnimalsDao extends BaseMapper<Animals> {
 

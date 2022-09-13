@@ -1,10 +1,9 @@
 package com.jerry.yzgl.yw.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.Version;
-import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+import java.math.BigDecimal;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -14,7 +13,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author jerry
- * @since 2022-09-10
+ * @since 2022-09-12
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -26,8 +25,7 @@ public class Animals implements Serializable {
     /**
      * 主键id
      */
-    @TableId(value = "id")
-    private String id;
+      private String id;
 
     /**
      * 动物名称（通俗易懂，口头白话取得名字，如果没有就不录入）
@@ -73,9 +71,28 @@ public class Animals implements Serializable {
      * 动物健康状况（健康，生病，残疾，死亡）
      */
     private String animalHealth;
-    /**
-     * 动物删除状态
-     */
+
     private Integer isDelete;
+
+    /**
+     * 动物最近测试体重 kg
+     */
+    private BigDecimal animalWeight;
+
+    /**
+     * 动物最近测试体重时间
+     */
+    private String animalWeightTime;
+
+    /**
+     * 动物买入时间
+     */
+    private String animalBuyfromTime;
+
+    /**
+     * 买入时价格
+     */
+    private BigDecimal animalBuyfromPrice;
+
 
 }

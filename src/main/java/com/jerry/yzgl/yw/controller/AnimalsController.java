@@ -22,8 +22,9 @@ import java.util.stream.Collectors;
  * </p>
  *
  * @author jerry
- * @since 2022-09-10
- */
+ * @since 2022-09-10*/
+
+
 @ApiOperation("牲畜信息相关接口")
 @RestController
 @RequestMapping("/animals")
