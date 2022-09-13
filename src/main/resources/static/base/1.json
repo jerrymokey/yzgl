@@ -1,0 +1,16 @@
+{
+  "animalName": "小牛",
+  "animalLogoCode":"3.jpg",
+  "animalCode":"1",
+  "animalLocation":"一号圈",
+  "animalType":"牛",
+  "animalSex":"公",
+  "animalColor":"蓝色",
+  "animalAge":"2",
+  "animalHealth":"健康",
+  "isDelete":0,
+  "animalWeight":"453",
+  "animalWeightTime":"444",
+  "animalBuyfromTime":"444",
+  "animalBuyfromPirce":"11000"
+}
